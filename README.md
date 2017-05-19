@@ -3,8 +3,12 @@ A Docker Image for Performing Modern Go Builds
 
 This is a base image that has the dependencies necessary for performing golang builds with Glide and Gox support. Glide provides golang dependency management. Gox provides simplified cross-platform building. A full complement of Linters is also pre-installed.
 
+## Supported tags:
+- 1.7.5, 1.7
+- 1.8.1, 1.8, 1, latest
+
 Included:
-* [Golang 1.8.1](https://golang.org/)
+* [Golang](https://golang.org/)
 * [Glide 0.12.3](https://github.com/Masterminds/glide)
 * [Gox](https://github.com/mitchellh/gox)
 
