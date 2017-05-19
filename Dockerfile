@@ -1,6 +1,6 @@
 FROM golang:1.8.1
 
-MAINTAINER Paul Otto <paul@ottoops.com>
+MAINTAINER CloudEnablementTeam <cet@ticketmaster.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
             git \
