@@ -1,4 +1,4 @@
-FROM golang:1.7.5
+FROM golang:1.7.6
 
 MAINTAINER CloudEnablementTeam <cet@ticketmaster.com>
 
