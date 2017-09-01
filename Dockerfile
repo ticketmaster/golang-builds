@@ -1,12 +1,17 @@
-FROM golang:1.8.3
+FROM golang:1.9.0
 
-MAINTAINER CloudEnablementTeam <cet@ticketmaster.com>
+MAINTAINER DevXTools <devxtools@ticketmaster.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
             git \
             curl \
+            unzip \
     && rm -rf /var/lib/apt/lists/*
 
+# ENV for Dep
+ENV GODEP_VERSION v0.3.0
+ENV GODEP_URL https://github.com/golang/dep/releases/download/$GODEP_VERSION/dep-linux-amd64.zip
+ENV GODEP_DOWNLOAD_SHA256 96c191251164b1404332793fb7d1e5d8de2641706b128bf8d65772363758f364
 # ENV for Glide
 ENV GLIDE_VERSION v0.12.3
 ENV GLIDE_DOWNLOAD_URL https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/glide-$GLIDE_VERSION-linux-amd64.tar.gz
@@ -18,6 +23,10 @@ RUN curl -fsSL "$GLIDE_DOWNLOAD_URL" -o glide.tar.gz \
     && mkdir -p /usr/local/glide \
     && tar -C /usr/local/glide -xzf glide.tar.gz \
     && rm glide.tar.gz \
+    && curl -fsSL "$GODEP_URL" -o dep.zip \
+    && echo "$GODEP_DOWNLOAD_SHA256 dep.zip" | sha256sum -c - \
+    && unzip -d /usr/local/bin dep.zip \
+    && rm dep.zip \
     && go get -u github.com/Masterminds/glide-report \
     && go get -u github.com/sgotti/glide-vc \
     && go get -u github.com/ngdinhtoan/glide-cleanup \
