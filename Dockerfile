@@ -1,4 +1,4 @@
-FROM golang:1.9.1
+FROM golang:1.9.2
 
 LABEL maintainer="DevXTools <devxtools@ticketmaster.com>"
 
