@@ -3,8 +3,8 @@
 This is a base image that has the dependencies necessary for performing golang builds with Dep, Glide, and Gox support. Dep is the official golang dependency management tool. Glide in place to provide golang dependency management for legacy projects. Gox provides simplified cross-platform building. A full complement of Linters is also pre-installed.
 
 # Supported tags:
-- 1.9.2, 1.9, 1, latest
-- 1.9.1, 1.9.0
+- 1.9.3, 1.9, 1, latest
+- 1.9.2, 1.9.1, 1.9.0
 - 1.8.3, 1.8
 - 1.8.0, 1.8.1, 1.8.2
 - 1.7.6, 1.7
@@ -13,7 +13,7 @@ This is a base image that has the dependencies necessary for performing golang b
 Included:
 * [Golang](https://golang.org/)
 * [Dep](https://github.com/golang/dep)
-* [Glide 0.13.0](https://github.com/Masterminds/glide)
+* [Glide 0.13.1](https://github.com/Masterminds/glide)
 * [Gox](https://github.com/mitchellh/gox)
 
 Glide Plugins:
