@@ -1,4 +1,4 @@
-FROM golang:1.9.7
+FROM golang:1.10.0
 
 LABEL maintainer="Paul Otto <paul.otto@ticketmaster.com>"
 
@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # ENV for Dep
-ENV GODEP_VERSION v0.3.2
+ENV GODEP_VERSION v0.5.0
 ENV GODEP_URL https://github.com/golang/dep/releases/download/$GODEP_VERSION/dep-linux-amd64
-ENV GODEP_DOWNLOAD_SHA256 322152b8b50b26e5e3a7f6ebaeb75d9c11a747e64bbfd0d8bb1f4d89a031c2b5
+ENV GODEP_DOWNLOAD_SHA256 287b08291e14f1fae8ba44374b26a2b12eb941af3497ed0ca649253e21ba2f83
 # ENV for Glide
 ENV GLIDE_VERSION v0.13.1
 ENV GLIDE_DOWNLOAD_URL https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/glide-$GLIDE_VERSION-linux-amd64.tar.gz
