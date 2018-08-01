@@ -1,6 +1,6 @@
-FROM golang:1.9.2
+FROM golang:1.9.7
 
-LABEL maintainer="DevXTools <devxtools@ticketmaster.com>"
+LABEL maintainer="Paul Otto <paul.otto@ticketmaster.com>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
             git \
@@ -13,9 +13,9 @@ ENV GODEP_VERSION v0.3.2
 ENV GODEP_URL https://github.com/golang/dep/releases/download/$GODEP_VERSION/dep-linux-amd64
 ENV GODEP_DOWNLOAD_SHA256 322152b8b50b26e5e3a7f6ebaeb75d9c11a747e64bbfd0d8bb1f4d89a031c2b5
 # ENV for Glide
-ENV GLIDE_VERSION v0.13.0
+ENV GLIDE_VERSION v0.13.1
 ENV GLIDE_DOWNLOAD_URL https://github.com/Masterminds/glide/releases/download/$GLIDE_VERSION/glide-$GLIDE_VERSION-linux-amd64.tar.gz
-ENV GLIDE_DOWNLOAD_SHA256 77680bbd9e51de9a5cbd212f4d0aab51abac49971695f0bc779b117f8cb188ff
+ENV GLIDE_DOWNLOAD_SHA256 c403933503ea40308ecfadcff581ff0dc3190c57958808bb9eed016f13f6f32c
 ENV PATH $PATH:/usr/local/glide/linux-amd64
 
 RUN curl -fsSL "$GLIDE_DOWNLOAD_URL" -o glide.tar.gz \
