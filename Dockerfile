@@ -1,6 +1,6 @@
-FROM golang:1.9.3
+FROM golang:1.9.4
 
-LABEL maintainer="DevXTools <devxtools@ticketmaster.com>"
+LABEL maintainer="Paul Otto <paul.otto@ticketmaster.com>"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
             git \
