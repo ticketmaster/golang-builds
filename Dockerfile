@@ -1,4 +1,4 @@
-FROM golang:1.9.6
+FROM golang:1.9.7
 
 LABEL maintainer="Paul Otto <paul.otto@ticketmaster.com>"
 
