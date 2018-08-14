@@ -1,12 +1,11 @@
-FROM golang:1.10.3
+FROM golang:1.10.3-alpine
 
 LABEL maintainer="Paul Otto <paul.otto@ticketmaster.com>"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apk --no-cache add \
             git \
             curl \
-            unzip \
-    && rm -rf /var/lib/apt/lists/*
+            unzip
 
 # ENV for Dep
 ENV GODEP_VERSION v0.5.0
@@ -24,7 +23,7 @@ RUN curl -fsSL "$GLIDE_DOWNLOAD_URL" -o glide.tar.gz \
     && tar -C /usr/local/glide -xzf glide.tar.gz \
     && rm glide.tar.gz \
     && curl -fsSL "$GODEP_URL" -o dep \
-    && echo "$GODEP_DOWNLOAD_SHA256 dep" | sha256sum -c - \
+    && echo "$GODEP_DOWNLOAD_SHA256  dep" | sha256sum -c - \
     && chmod +x dep \
     && mv dep /usr/local/bin \
     && go get -u github.com/Masterminds/glide-report \
